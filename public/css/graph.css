@@ -1,0 +1,20 @@
+svg {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+
+.node rect {
+    stroke: #333;
+    stroke-width: 1.5px;
+    fill: #fff;
+    stroke-radius: 25px;
+}
+.edgeLabel rect {
+    fill: #fff;
+}
+.edgePath {
+    stroke: #333;
+    stroke-width: 1.5px;
+    fill:none;
+}
