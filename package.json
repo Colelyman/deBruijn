@@ -19,6 +19,7 @@
     "consolidate": "^0.14.0",
     "dagre-d3": "^0.4.17",
     "express": "^4.11.0",
+    "express-fileupload": "0.0.6",
     "glob": "^7.0.0",
     "graphlib-dot": "^0.6.2",
     "handlebars": "^4.0.6",
