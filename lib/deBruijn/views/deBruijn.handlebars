@@ -6,3 +6,11 @@
 
     <a href="">Download the graph</a>
 </div>
+
+<div class="row">
+    <h3>Upload your own de Bruijn graph here!</h3>
+	<form ref="uploadForm" id="upload-partial" action="/upload" method="post" encType="multipart/form-data">
+		<input type="file" name="file" />
+		<input type="submit" value="Upload!" />
+	</form>
+</div>

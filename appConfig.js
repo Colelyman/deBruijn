@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var fileUpload = require('express-fileupload');
 
 require('app-module-path').addPath(__dirname + '/lib');
 
@@ -14,6 +15,9 @@ exports.setup = function(runningApp, callback) {
   //// you could use two view engines in parallel (if you are brave):
   // runningApp.set('view engine', 'j2');
   // runningApp.engine('j2', require('swig').renderFile);
+
+  // set up express-fileupload
+  runningApp.use(fileUpload());
 
   // serve the static files
   runningApp.use(express.static(path.join(__dirname, 'public')));
