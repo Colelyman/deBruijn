@@ -1,3 +1,6 @@
+var express = require('express');
+var path = require('path');
+
 require('app-module-path').addPath(__dirname + '/lib');
 
 exports.setup = function(runningApp, callback) {
@@ -12,6 +15,7 @@ exports.setup = function(runningApp, callback) {
   // runningApp.set('view engine', 'j2');
   // runningApp.engine('j2', require('swig').renderFile);
 
+  runningApp.use(express.static(path.join(__dirname, 'public')));
 
   //---- Mounting well-encapsulated application modules (so-called: "mini-apps")
   //---- See: http://expressjs.com/guide/routing.html and http://vimeo.com/56166857
