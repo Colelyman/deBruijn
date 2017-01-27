@@ -17,7 +17,7 @@ exports.setup = function(runningApp, callback) {
 
   // serve the static files
   runningApp.use(express.static(path.join(__dirname, 'public')));
-  runningApp.use(express.static(path.join(__dirname, 'bower_components')));
+  runningApp.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 
   //---- Mounting well-encapsulated application modules (so-called: "mini-apps")
   //---- See: http://expressjs.com/guide/routing.html and http://vimeo.com/56166857
