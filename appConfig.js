@@ -16,8 +16,7 @@ exports.setup = function(runningApp, callback) {
   // runningApp.engine('j2', require('swig').renderFile);
 
   // serve the static files
-  runningApp.use(express.static(path.join(__dirname + 'public')));
-  runningApp.use('/bower_components', express.static(path.join(__dirname + '/bower_components')));
+  runningApp.use(express.static(path.join(__dirname, 'public')));
 
   //---- Mounting well-encapsulated application modules (so-called: "mini-apps")
   //---- See: http://expressjs.com/guide/routing.html and http://vimeo.com/56166857
