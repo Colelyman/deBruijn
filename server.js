@@ -3,7 +3,8 @@ require('app-module-path').addPath(__dirname + '/lib');
 
 var server = require('nodebootstrap-server')
   , appConfig = require('./appConfig')
-  , app    = require('express')();
+  , app    = require('express')()
+  , fileUpload = require('express-fileupload');
 
 
 app = require('nodebootstrap-htmlapp').setup(app);

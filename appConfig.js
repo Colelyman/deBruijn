@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var fileUpload = require('express-fileupload');
 
 require('app-module-path').addPath(__dirname + '/lib');
 
@@ -16,9 +15,6 @@ exports.setup = function(runningApp, callback) {
   // runningApp.set('view engine', 'j2');
   // runningApp.engine('j2', require('swig').renderFile);
 
-  // set up express-fileupload
-  runningApp.use(fileUpload());
-
   // serve the static files
   runningApp.use(express.static(path.join(__dirname, 'public')));
   runningApp.use(express.static(path.join(__dirname, 'bower_components')));
@@ -26,9 +22,6 @@ exports.setup = function(runningApp, callback) {
   //---- Mounting well-encapsulated application modules (so-called: "mini-apps")
   //---- See: http://expressjs.com/guide/routing.html and http://vimeo.com/56166857
   runningApp.use('/hello', require('hello')); // attach to sub-route
-
-  // API endpoint attached to root route:
-  // runningApp.use('/', require('homedoc')); // attach to root route
 
   runningApp.use('/', require('deBruijn'));
 
