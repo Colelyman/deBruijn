@@ -23,9 +23,6 @@ exports.setup = function(runningApp, callback) {
   //---- See: http://expressjs.com/guide/routing.html and http://vimeo.com/56166857
   runningApp.use('/hello', require('hello')); // attach to sub-route
 
-  // API endpoint attached to root route:
-  // runningApp.use('/', require('homedoc')); // attach to root route
-
   runningApp.use('/', require('deBruijn'));
 
   // If you need websockets:
