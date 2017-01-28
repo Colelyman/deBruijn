@@ -1,0 +1,7 @@
+digraph {
+    node [rx=6 ry=6 labelStyle="font: 300 14px 'Helvetica Neue', Helvetica"]
+    AGCT -> GCTT;
+    GCTT -> CTTA;
+    AGCT -> GCTA;
+    GCTA -> CTAT;
+}
