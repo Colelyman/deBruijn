@@ -15,11 +15,11 @@
   "dependencies": {
     "app-module-path": "^2.1.0",
     "body-parser": "^1.14.1",
+    "bower": "^1.8.0",
     "config": "*",
     "consolidate": "^0.14.0",
     "dagre-d3": "^0.4.17",
     "express": "^4.11.0",
-    "fs": "0.0.1-security",
     "glob": "^7.0.0",
     "graphlib-dot": "^0.6.2",
     "handlebars": "^4.0.6",
@@ -60,6 +60,7 @@
     "test": "mocha --bail test/ test/acceptance/",
     "pretest": "jshint lib test",
     "test-cov": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --reporter dot test/ test/acceptance/",
-    "test-travis": "istanbul cover _mocha --report lcovonly -- test/ test/acceptance/"
+    "test-travis": "istanbul cover _mocha --report lcovonly -- test/ test/acceptance/",
+    "postinstall": "./node_modules/bower/bin/bower install"
   }
 }
