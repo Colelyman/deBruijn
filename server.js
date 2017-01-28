@@ -6,7 +6,6 @@ var server = require('nodebootstrap-server')
   , app    = require('express')()
   , fileUpload = require('express-fileupload');
 
-
 app = require('nodebootstrap-htmlapp').setup(app);
 
 server.setup(app, appConfig.setup);
