@@ -1,13 +1,12 @@
 window.onload = function() {
-    var g = graphlibDot.read(
-        'digraph {\n' +
-        '   node [rx=6 ry=6 labelStyle="font:300 14px ' + "'Helvetica Neue'" + ', Helvetica"]\n' +
-        '   AGCT -> GCTT;\n' +
-        '   GCTT -> CTTA;\n' +
-        '   AGCT -> GCTA;\n' +
-        '   GCTA -> CTAT;\n' +
-        '       }'
-    );
+    $.get('uploads/defaultGraph.dot', function(res) {
+        var dotFile = res;
+        loadGraph(dotFile);
+    });
+};
+
+loadGraph = function(dotFile) {
+    var g = graphlibDot.read(dotFile);
 
     var graphLink = d3.select('#graphLink');
 
@@ -19,7 +18,6 @@ window.onload = function() {
     });
     svg.call(zoom);
 
-    //var renderer = new dagreD3.Renderer();
     var render = dagreD3.render();
 
     if(!g.graph().hasOwnProperty('marginx') &&
@@ -32,11 +30,5 @@ window.onload = function() {
         return selection.transistion().durration(500);
     };
 
-    //renderer.run(g, svg);
     d3.select('svg g').call(render, g);
-
-/*    var svg = document.querySelector('#graphContainer');
-    var bbox = svg.getBBox();
-    svg.style.width = bbox.width + 40.0 + 'px';
-    svg.style.height = bbox.height + 40.0 + 'px'; */
 };
