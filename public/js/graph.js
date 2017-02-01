@@ -1,5 +1,5 @@
 window.onload = function() {
-    $.get('uploads/defaultGraph.dot', function(res) {
+    $.get('uploads/partial_graph.0.dot', function(res) {
         var dotFile = res;
         loadGraph(dotFile);
     });

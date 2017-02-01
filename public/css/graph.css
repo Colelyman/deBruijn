@@ -12,6 +12,12 @@ svg {
     fill: #fff;
     stroke-radius: 25px;
 }
+
+.red rect {
+    stroke: #e51919;
+}
+
+
 .edgeLabel rect {
     fill: #fff;
 }
